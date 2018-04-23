@@ -4,7 +4,7 @@
 #
 Name     : R-R2Cuba
 Version  : 1.1.0
-Release  : 3
+Release  : 4
 URL      : https://cran.r-project.org/src/contrib/R2Cuba_1.1-0.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/R2Cuba_1.1-0.tar.gz
 Summary  : Multidimensional Numerical Integration
