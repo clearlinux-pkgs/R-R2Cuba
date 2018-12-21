@@ -4,16 +4,16 @@
 #
 Name     : R-R2Cuba
 Version  : 1.1.0
-Release  : 10
-URL      : https://cran.r-project.org/src/contrib/R2Cuba_1.1-0.tar.gz
-Source0  : https://cran.r-project.org/src/contrib/R2Cuba_1.1-0.tar.gz
+Release  : 11
+URL      : https://cran.r-project.org/src/contrib/Archive/R2Cuba/R2Cuba_1.1-0.tar.gz
+Source0  : https://cran.r-project.org/src/contrib/Archive/R2Cuba/R2Cuba_1.1-0.tar.gz
 Summary  : Multidimensional Numerical Integration
 Group    : Development/Tools
 License  : GPL-3.0
-Requires: R-R2Cuba-lib
+Requires: R-R2Cuba-lib = %{version}-%{release}
 Requires: R-mvtnorm
 BuildRequires : R-mvtnorm
-BuildRequires : clr-R-helpers
+BuildRequires : buildreq-R
 
 %description
 No detailed description available
@@ -34,11 +34,11 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1521204026
+export SOURCE_DATE_EPOCH=1545358528
 
 %install
+export SOURCE_DATE_EPOCH=1545358528
 rm -rf %{buildroot}
-export SOURCE_DATE_EPOCH=1521204026
 export LANG=C
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
 export FCFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
