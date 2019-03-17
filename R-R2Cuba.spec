@@ -4,14 +4,13 @@
 #
 Name     : R-R2Cuba
 Version  : 1.1.0
-Release  : 14
+Release  : 15
 URL      : https://cran.r-project.org/src/contrib/Archive/R2Cuba/R2Cuba_1.1-0.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/Archive/R2Cuba/R2Cuba_1.1-0.tar.gz
 Summary  : Multidimensional Numerical Integration
 Group    : Development/Tools
 License  : GPL-3.0
 Requires: R-R2Cuba-lib = %{version}-%{release}
-Requires: R-mvtnorm
 BuildRequires : R-mvtnorm
 BuildRequires : buildreq-R
 
@@ -34,10 +33,10 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1545358528
+export SOURCE_DATE_EPOCH=1552794451
 
 %install
-export SOURCE_DATE_EPOCH=1545358528
+export SOURCE_DATE_EPOCH=1552794451
 rm -rf %{buildroot}
 export LANG=C
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
@@ -73,8 +72,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export _R_CHECK_FORCE_SUGGESTS_=false
-R CMD check --no-manual --no-examples --no-codoc -l %{buildroot}/usr/lib64/R/library R2Cuba|| : 
-cp ~/.stash/* %{buildroot}/usr/lib64/R/library/*/libs/ || :
+R CMD check --no-manual --no-examples --no-codoc  R2Cuba || :
 
 
 %files
@@ -101,7 +99,19 @@ cp ~/.stash/* %{buildroot}/usr/lib64/R/library/*/libs/ || :
 /usr/lib64/R/library/R2Cuba/help/paths.rds
 /usr/lib64/R/library/R2Cuba/html/00Index.html
 /usr/lib64/R/library/R2Cuba/html/R.css
-/usr/lib64/R/library/R2Cuba/libs/symbols.rds
+/usr/lib64/R/library/R2Cuba/tests/Gtilde2.R
+/usr/lib64/R/library/R2Cuba/tests/Gtilde2.Rout.save
+/usr/lib64/R/library/R2Cuba/tests/MWE.R
+/usr/lib64/R/library/R2Cuba/tests/MWE.Rout.save
+/usr/lib64/R/library/R2Cuba/tests/cuhre.R
+/usr/lib64/R/library/R2Cuba/tests/cuhre.Rout.save
+/usr/lib64/R/library/R2Cuba/tests/divonne.R
+/usr/lib64/R/library/R2Cuba/tests/divonne.Rout.save
+/usr/lib64/R/library/R2Cuba/tests/peak.R
+/usr/lib64/R/library/R2Cuba/tests/peak.Rout.save
+/usr/lib64/R/library/R2Cuba/tests/suave.R
+/usr/lib64/R/library/R2Cuba/tests/suave.Rout.save
+/usr/lib64/R/library/R2Cuba/tests/vegas.R
 
 %files lib
 %defattr(-,root,root,-)
